@@ -1,4 +1,18 @@
 <resources>
-    <string name="app_name">NoteForTravel</string>
+    <string name="app_name">游记</string>
     <string name="action_settings">Settings</string>
+
+    <string name="tv_travel">游记</string>
+    <string name="tv_account">账本</string>
+    <string name="tv_tool">工具</string>
+    <string name="tv_topic">专题</string>
+    <string name="tv_stroke">行程</string>
+    <string name="tv_travelNote">旅行地</string>
+
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">亲！高抬贵手</string>
+    <string name="pull_to_refresh_refreshing_label">拼命加载中...\u2026</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
 </resources>

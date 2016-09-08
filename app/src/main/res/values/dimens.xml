@@ -3,4 +3,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!--表示主界面切换viewpager的Textview高度-->
+    <dimen name="tv_main_viewpager_height">4dp</dimen>
+
+    <!--表示游记界面RadioGroup的高度-->
+    <dimen name="rg_travel_radiogroup_height">20dp</dimen>
 </resources>
