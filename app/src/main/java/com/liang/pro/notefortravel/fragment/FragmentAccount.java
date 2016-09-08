@@ -20,8 +20,6 @@ public class FragmentAccount extends Fragment implements PullToRefreshView.OnFoo
     //当前的页数
     private int page = 1;
 
-    //是否有缓存
-    private boolean hasCache;
 
     public FragmentAccount() {
     }

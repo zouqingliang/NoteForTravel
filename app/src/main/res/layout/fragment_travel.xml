@@ -2,13 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cxd.chanyj.Fragment_Travel">
+    android:background="#e6e6e6"
+    tools:context=".Fragment_Travel">
 
+    <com.liang.pro.notefortravel.customView.PullToRefreshView
+        android:id="@+id/fresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:text="@string/tv_travel"/>
+        <ListView
+            android:id="@+id/travle_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:dividerHeight="10dp">
+        </ListView>
 
-
+    </com.liang.pro.notefortravel.customView.PullToRefreshView>
 </LinearLayout>
