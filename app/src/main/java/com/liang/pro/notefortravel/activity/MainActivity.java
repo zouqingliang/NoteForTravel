@@ -1,12 +1,10 @@
 package com.liang.pro.notefortravel.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -35,9 +33,6 @@ public class MainActivity extends BaseActivity {
     @ViewInject(R.id.toolbar)
     private Toolbar toolbar;
 
-    @ViewInject(R.id.fab)
-    private FloatingActionButton fab;
-
     private int size = 3;
     private MainAdapter mainAdapter;
 
@@ -49,12 +44,6 @@ public class MainActivity extends BaseActivity {
 
         initView();
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity(AddTravelContentActivity.class);
-            }
-        });
     }
 
     @Override
@@ -70,7 +59,7 @@ public class MainActivity extends BaseActivity {
                 showMsg("点击了设置");
                 break;
             case R.id.action_search:
-                showMsg("点击了搜索");
+                openActivity(AddTravelContentActivity.class);
                 break;
         }
         return true;

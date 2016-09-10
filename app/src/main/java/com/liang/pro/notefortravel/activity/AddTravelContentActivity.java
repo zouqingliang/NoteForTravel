@@ -31,7 +31,9 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
 * Created by Administrator on 2016/4/1.
@@ -130,7 +132,7 @@ public class AddTravelContentActivity extends BaseActivity implements View.OnCli
                     path.mkdir();
                 }
                 Intent intent_img = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                photoFile = new File(path, DateTools.getWriteDate() + ".jpg");
+                photoFile = new File(path, getWriteTime() + ".jpg");
                 intent_img.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
                 startActivityForResult(intent_img, 1);
                 break;
@@ -147,6 +149,13 @@ public class AddTravelContentActivity extends BaseActivity implements View.OnCli
                 }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
                 break;
         }
+    }
+
+    public String getWriteTime() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String writeDate = format.format(date);
+        return writeDate;
     }
 
     public void save(){

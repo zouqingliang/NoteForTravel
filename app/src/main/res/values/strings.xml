@@ -5,6 +5,7 @@
     <string name="action_search">搜索</string>
     <string name="action_save">保存</string>
     <string name="action_delete">删除</string>
+    <string name="activity_read">游记详情</string>
 
     <string name="tv_travel">游记</string>
     <string name="tv_account">账本</string>
@@ -19,4 +20,12 @@
     <string name="pull_to_refresh_footer_release_label">松开后加载</string>
     <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
     <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+
+    <!-- 分享成功失败的 Toast -->
+    <string name="weibosdk_demo_toast_share_success">分享成功</string>
+    <string name="weibosdk_demo_toast_share_failed">分享失败</string>
+    <string name="weibosdk_demo_toast_share_canceled">取消分享</string>
+    <string name="weibosdk_demo_toast_share_response_args_success">收到微博发起的请求成功</string>
+    <string name="weibosdk_demo_toast_share_response_args_failed">收到客户端请求消息失败</string>
+
 </resources>

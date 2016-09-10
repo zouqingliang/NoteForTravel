@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'notefortravel'
+            keyPassword '123456'
+            storeFile file('E:/AndroidStudioProjects/NoteForTravel/new_keysstore.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
     defaultConfig {
@@ -26,4 +34,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
     compile 'org.xutils:xutils:3.3.36'
+    compile files('libs/weiboSDKCore_3.1.4.jar')
 }

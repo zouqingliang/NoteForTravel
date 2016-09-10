@@ -4,11 +4,6 @@
     android:layout_height="match_parent"
     android:background="#e6e6e6">
 
-    <com.liang.pro.notefortravel.customView.PullToRefreshView
-        android:id="@+id/fresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
         <ListView
             android:id="@+id/travel_listview"
@@ -20,6 +15,5 @@
             android:dividerHeight="10dp">
         </ListView>
 
-    </com.liang.pro.notefortravel.customView.PullToRefreshView>
 
 </LinearLayout>

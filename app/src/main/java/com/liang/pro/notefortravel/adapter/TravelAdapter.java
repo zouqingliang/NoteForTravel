@@ -3,13 +3,13 @@ package com.liang.pro.notefortravel.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liang.pro.notefortravel.R;
-import com.liang.pro.notefortravel.database.TravelDB;
 import com.liang.pro.notefortravel.model.Travel;
 
 import org.xutils.view.annotation.ViewInject;
@@ -38,10 +38,10 @@ public class TravelAdapter extends MyAdapter {
         }
     }
 
-    public TravelAdapter(Context context) {
+    private List list;
+    public TravelAdapter(Context context,List mList) {
         super(context, null);
-        TravelDB travelDB = TravelDB.getInstance(context);
-        List list = travelDB.loadTravel();
+        this.list = mList;
         setList(list);
     }
 
@@ -53,11 +53,13 @@ public class TravelAdapter extends MyAdapter {
         }
         ViewHolder viewHolder = (ViewHolder) view.getTag();
         Travel travel = (Travel) getList().get(i);
-        if (travel.getImg_path() == null){
+        if (travel.getImg_path().equals("null")){
             viewHolder.img_travel.setImageResource(R.drawable.img_default);
+            Log.d("test",travel.getImg_path());
         }else {
             Bitmap bitmap = BitmapFactory.decodeFile(travel.getImg_path());
             viewHolder.img_travel.setImageBitmap(bitmap);
+            viewHolder.img_travel.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
         viewHolder.tv_title.setText(travel.getTitle());
         viewHolder.tv_place.setText(travel.getDestination());
@@ -65,4 +67,6 @@ public class TravelAdapter extends MyAdapter {
 
         return view;
     }
+
+
 }
