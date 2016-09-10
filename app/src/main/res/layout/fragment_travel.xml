@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e6e6e6"
-    tools:context=".Fragment_Travel">
+    android:background="#e6e6e6">
 
     <com.liang.pro.notefortravel.customView.PullToRefreshView
         android:id="@+id/fresh"
@@ -12,7 +11,7 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/travle_listview"
+            android:id="@+id/travel_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="@android:color/transparent"

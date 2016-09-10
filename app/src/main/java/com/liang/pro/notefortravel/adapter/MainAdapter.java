@@ -8,9 +8,6 @@ import com.liang.pro.notefortravel.fragment.FragmentAccount;
 import com.liang.pro.notefortravel.fragment.FragmentTool;
 import com.liang.pro.notefortravel.fragment.FragmentTravel;
 
-/**
- * Created by Administrator on 2016/9/8.
- */
 public class MainAdapter extends FragmentPagerAdapter {
 
     private int size;
