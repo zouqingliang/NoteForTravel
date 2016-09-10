@@ -22,45 +22,63 @@ import android.widget.TextView;
 
 import com.liang.pro.notefortravel.R;
 import com.liang.pro.notefortravel.activity.base.BaseActivity;
+import com.liang.pro.notefortravel.database.TravelDB;
+import com.liang.pro.notefortravel.model.Travel;
+import com.liang.pro.notefortravel.utils.DateTools;
+
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
- * Created by Administrator on 2016/4/1.
+* Created by Administrator on 2016/4/1.
  */
+@ContentView(value = R.layout.add_travel_content)
 public class AddTravelContentActivity extends BaseActivity implements View.OnClickListener {
 
+    @ViewInject(R.id.toolbar_add)
     private Toolbar toolbar;
-    private EditText edit_title, edit_content, edit_place;
-    private Button btn_img, btn_data;
+
+    @ViewInject(value = R.id.edit_title)
+    private EditText edit_title;
+
+    @ViewInject(R.id.edit_content)
+    private EditText edit_content;
+
+    @ViewInject(R.id.edit_place)
+    private EditText edit_place;
+
+    @ViewInject(R.id.btn_add_img)
+    private Button btn_img;
+
+    @ViewInject(R.id.btn_choose_data)
+    private Button btn_data;
+
+    @ViewInject(R.id.add_img)
     private ImageView add_img;
+
+    @ViewInject(R.id.textView)
     private TextView text;
+
     private String travelData;
     private File photoFile;
+    private TravelDB travelDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_travel_content);
+        x.view().inject(this);
 
-        edit_title = (EditText) findViewById(R.id.edit_title);
-        edit_content = (EditText) findViewById(R.id.edit_content);
-        edit_place = (EditText) findViewById(R.id.edit_place);
-        add_img = (ImageView) findViewById(R.id.add_img);
-        btn_img = (Button) findViewById(R.id.btn_add_img);
-        text = (TextView) findViewById(R.id.textView);
-        btn_data = (Button) findViewById(R.id.btn_choose_data);
 
+        travelDB = TravelDB.getInstance(this);
         btn_img.setOnClickListener(this);
         btn_data.setOnClickListener(this);
 
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_add);
         toolbar.setNavigationIcon(R.drawable.ic_back);
-
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,13 +87,13 @@ public class AddTravelContentActivity extends BaseActivity implements View.OnCli
                 AlertDialog.Builder builder = new AlertDialog.Builder(AddTravelContentActivity.this);
                 builder.setTitle("提示");
                 builder.setMessage("未保存内容，是否离开");
+                builder.setPositiveButton("取消", null);
                 builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
                     }
                 });
-                builder.setPositiveButton("取消", null);
                 builder.setCancelable(true);
                 AlertDialog dialog = builder.create();
                 dialog.show();
@@ -93,10 +111,8 @@ public class AddTravelContentActivity extends BaseActivity implements View.OnCli
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_delete:
-                finish();
-                break;
             case R.id.action_save:
+                save();
                 finish();
                 break;
         }
@@ -114,7 +130,7 @@ public class AddTravelContentActivity extends BaseActivity implements View.OnCli
                     path.mkdir();
                 }
                 Intent intent_img = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                photoFile = new File(path, getWriteTime() + ".jpg");
+                photoFile = new File(path, DateTools.getWriteDate() + ".jpg");
                 intent_img.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
                 startActivityForResult(intent_img, 1);
                 break;
@@ -133,11 +149,15 @@ public class AddTravelContentActivity extends BaseActivity implements View.OnCli
         }
     }
 
-    public String getWriteTime() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        String writeDate = format.format(date);
-        return writeDate;
+    public void save(){
+        Travel travel = new Travel();
+        travel.setTitle(edit_title.getText().toString());
+        travel.setContent(edit_content.getText().toString());
+        travel.setWrite_time(DateTools.getWriteDate());
+        travel.setTravel_time(btn_data.getText().toString());
+        travel.setImg_path(photoFile + "");
+        travel.setDestination(edit_place.getText().toString());
+        travelDB.saveTravel(travel);
     }
 
     @Override

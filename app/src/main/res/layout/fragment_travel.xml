@@ -21,4 +21,5 @@
         </ListView>
 
     </com.liang.pro.notefortravel.customView.PullToRefreshView>
+
 </LinearLayout>

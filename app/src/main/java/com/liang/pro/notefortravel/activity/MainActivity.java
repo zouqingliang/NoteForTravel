@@ -35,6 +35,9 @@ public class MainActivity extends BaseActivity {
     @ViewInject(R.id.toolbar)
     private Toolbar toolbar;
 
+    @ViewInject(R.id.fab)
+    private FloatingActionButton fab;
+
     private int size = 3;
     private MainAdapter mainAdapter;
 
@@ -46,7 +49,6 @@ public class MainActivity extends BaseActivity {
 
         initView();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

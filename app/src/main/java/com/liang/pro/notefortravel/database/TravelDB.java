@@ -52,8 +52,8 @@ public class TravelDB {
                 travel.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 travel.setTitle(cursor.getString(cursor.getColumnIndex("title")));
                 travel.setContent(cursor.getString(cursor.getColumnIndex("content")));
-                travel.setWrite_time(DateTools.getDate(cursor.getString(cursor.getColumnIndex("write_time")), "yyyy-MM-dd"));
-                travel.setTravel_time(DateTools.getDate(cursor.getString(cursor.getColumnIndex("travel_time")), "yyyy-MM-dd"));
+                travel.setWrite_time(cursor.getString(cursor.getColumnIndex("write_time")));
+                travel.setTravel_time(cursor.getString(cursor.getColumnIndex("travel_time")));
                 travel.setDestination(cursor.getString(cursor.getColumnIndex("destination")));
                 travel.setImg_path(cursor.getString(cursor.getColumnIndex("img_path")));
                 travelList.add(travel);

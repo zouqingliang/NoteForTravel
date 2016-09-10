@@ -1,7 +1,5 @@
 package com.liang.pro.notefortravel.model;
 
-import java.util.Date;
-
 public class Travel {
    /* CREATE TABLE [travel] (
             [_id] INT NOT NULL,
@@ -16,8 +14,8 @@ public class Travel {
     private int id;   //主键id
     private String title;  //标题
     private String content;  //内容
-    private Date write_time;  //编辑笔记时间
-    private Date travel_time;  //旅行时间
+    private String write_time;  //编辑笔记时间
+    private String travel_time;  //旅行时间
     private String destination;  //目的地
     private String img_path;  //图片地址
 
@@ -45,19 +43,19 @@ public class Travel {
         this.content = content;
     }
 
-    public Date getWrite_time() {
+    public String getWrite_time() {
         return write_time;
     }
 
-    public void setWrite_time(Date write_time) {
+    public void setWrite_time(String write_time) {
         this.write_time = write_time;
     }
 
-    public Date getTravel_time() {
+    public String getTravel_time() {
         return travel_time;
     }
 
-    public void setTravel_time(Date travel_time) {
+    public void setTravel_time(String travel_time) {
         this.travel_time = travel_time;
     }
 
