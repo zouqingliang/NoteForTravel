@@ -18,6 +18,13 @@ public class DateTools {
         return writeDate;
     }
 
+    public static String getWriteTime() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String writeDate = format.format(date);
+        return writeDate;
+    }
+
     /**
      * 将Date类型转换成String
      * @param date

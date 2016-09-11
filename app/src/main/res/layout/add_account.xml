@@ -31,6 +31,7 @@
             android:hint="@string/hint_category"/>
     </TableRow>
     <TableRow>
+
         <CheckBox android:id="@+id/ck_input"
             android:text="@string/input_money"/>
 
@@ -49,10 +50,13 @@
 
     <android.inputmethodservice.KeyboardView
         android:id="@+id/keyboard_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
         android:focusable="true"
+        android:background="@color/white"
+        android:keyBackground="@color/white"
+        android:keyTextColor="@color/black"
         android:focusableInTouchMode="true"
         android:visibility="visible"
         />

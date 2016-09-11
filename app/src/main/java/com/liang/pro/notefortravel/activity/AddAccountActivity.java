@@ -12,16 +12,19 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.liang.pro.notefortravel.R;
 import com.liang.pro.notefortravel.activity.base.BaseActivity;
 import com.liang.pro.notefortravel.database.AccountDB;
 import com.liang.pro.notefortravel.model.Account;
+import com.liang.pro.notefortravel.utils.DateTools;
+import com.liang.pro.notefortravel.utils.KeyboardUtil;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 @ContentView(R.layout.add_account)
-public class AddAccountActivity extends BaseActivity {
+public class AddAccountActivity extends BaseActivity{
 
     @ViewInject(R.id.edit_category)
     EditText edit_category;
@@ -69,6 +72,18 @@ public class AddAccountActivity extends BaseActivity {
                 dialog.show();
             }
         });
+
+        edit_money.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //这样是在触摸到控件时，软键盘才会显示出来
+                int inputback = edit_money.getInputType();
+                edit_money.setInputType(InputType.TYPE_NULL);
+                new KeyboardUtil(AddAccountActivity.this, AddAccountActivity.this, edit_money).showKeyboard();
+                edit_money.setInputType(inputback);
+                return false;
+            }
+        });
     }
 
     @Override
@@ -96,9 +111,20 @@ public class AddAccountActivity extends BaseActivity {
         } else if (ck_output.isChecked()){
             account.setState(2); //2表示支出
         }
+        account.setAddDate(DateTools.getWriteTime());
         account.setMoney(Float.parseFloat(edit_money.getText().toString().trim()));
 
         accountDB.saveAccount(account);
     }
+/*
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //屏蔽后退键
+        if(KeyEvent.KEYCODE_BACK == event.getKeyCode())
+        {
+            return true;//阻止事件继续向下分发
+        }
+        return super.onKeyDown(keyCode, event);
+    }*/
 
 }

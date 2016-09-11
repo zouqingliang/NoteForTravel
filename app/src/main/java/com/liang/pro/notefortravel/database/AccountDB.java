@@ -34,6 +34,7 @@ public class AccountDB {
             ContentValues values = new ContentValues();
             values.put("category", account.getCategory());
             values.put("money", account.getMoney());
+            values.put("add_date",account.getAddDate());
             values.put("state", account.getState());
 
 
@@ -51,6 +52,7 @@ public class AccountDB {
                 account.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 account.setCategory(cursor.getString(cursor.getColumnIndex("category")));
                 account.setMoney(cursor.getFloat(cursor.getColumnIndex("money")));
+                account.setAddDate(cursor.getString(cursor.getColumnIndex("add_date")));
                 account.setState(cursor.getInt(cursor.getColumnIndex("state")));
                 accountList.add(account);
             }while (cursor.moveToNext());

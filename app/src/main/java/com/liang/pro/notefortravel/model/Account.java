@@ -5,6 +5,7 @@ public class Account {
     private int id;  //主键id
     private String category;  //消费类别
     private int state;    //1：收入；2：支出
+    private String addDate;
     private float money;  //金额
 
     public int getId() {
@@ -37,5 +38,13 @@ public class Account {
 
     public void setMoney(float money) {
         this.money = money;
+    }
+
+    public String getAddDate() {
+        return addDate;
+    }
+
+    public void setAddDate(String addDate) {
+        this.addDate = addDate;
     }
 }

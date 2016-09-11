@@ -22,6 +22,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
             "     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT NOT NULL," +
             "     category TEXT NOT NULL," +
             "     money MONEY NOT NULL, " +
+            "     add_date DATE NOT NULL, " +
             "     state INTEGER NOT NULL )";
 
     public SQLiteHelper(Context context) {
