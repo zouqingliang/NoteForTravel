@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">游记</string>
     <string name="activity_write">写游记</string>
+    <string name="activity_account">记账</string>
     <string name="action_settings">设置</string>
     <string name="action_search">搜索</string>
     <string name="action_save">保存</string>

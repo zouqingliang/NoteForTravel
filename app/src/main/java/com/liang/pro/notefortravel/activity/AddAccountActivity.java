@@ -12,18 +12,16 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.liang.pro.notefortravel.R;
 import com.liang.pro.notefortravel.activity.base.BaseActivity;
 import com.liang.pro.notefortravel.database.AccountDB;
 import com.liang.pro.notefortravel.model.Account;
-import com.liang.pro.notefortravel.utils.KeyboardUtil;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 @ContentView(R.layout.add_account)
-public class AddAccountActivity extends BaseActivity implements View.OnTouchListener {
+public class AddAccountActivity extends BaseActivity {
 
     @ViewInject(R.id.edit_category)
     EditText edit_category;
@@ -103,13 +101,4 @@ public class AddAccountActivity extends BaseActivity implements View.OnTouchList
         accountDB.saveAccount(account);
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        //这样是在触摸到控件时，软键盘才会显示出来
-        int inputback = edit_money.getInputType();
-        edit_money.setInputType(InputType.TYPE_NULL);
-        new KeyboardUtil(this, this, edit_money).showKeyboard();
-        edit_money.setInputType(inputback);
-        return true;
-    }
 }
