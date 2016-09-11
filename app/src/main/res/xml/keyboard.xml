@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:horizontalgap="0px"
+    android:keyheight="10%p"
+    android:keywidth="33%p"
+    android:verticalgap="0px">
+    <row>
+        <key
+            android:codes="49"
+            android:keylabel="1" />
+        <key
+            android:codes="50"
+            android:keylabel="2" />
+        <key
+            android:codes="51"
+            android:keylabel="3" />
+    </row>
+    <row>
+        <key
+            android:codes="52"
+            android:keylabel="4" />
+        <key
+            android:codes="53"
+            android:keylabel="5" />
+        <key
+            android:codes="54"
+            android:keylabel="6" />
+    </row>
+    <row>
+        <key
+            android:codes="55"
+            android:keylabel="7" />
+        <key
+            android:codes="56"
+            android:keylabel="8" />
+        <key
+            android:codes="57"
+            android:keylabel="9" />
+    </row>
+    <row>
+        <key
+            android:codes="46"
+            android:keylabel="." />
+        <key
+            android:codes="48"
+            android:keylabel="0" />
+        <key
+            android:codes="-5"
+            android:keyicon="@drawable/key_delete" />
+    </row>
+</keyboard>

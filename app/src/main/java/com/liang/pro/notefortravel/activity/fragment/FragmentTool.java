@@ -1,4 +1,4 @@
-package com.liang.pro.notefortravel.fragment;
+package com.liang.pro.notefortravel.activity.fragment;
 
 
 import android.os.Bundle;

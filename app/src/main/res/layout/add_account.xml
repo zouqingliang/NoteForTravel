@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_add_account"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+
+    </android.support.design.widget.AppBarLayout>
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:stretchColumns="1">
+    <TableRow>
+        <TextView android:layout_height="wrap_content"
+            android:text="@string/category"/>
+
+        <EditText android:id="@+id/edit_category"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_category"/>
+    </TableRow>
+    <TableRow>
+        <CheckBox android:id="@+id/ck_input"
+            android:text="@string/input_money"/>
+
+        <CheckBox android:id="@+id/ck_output"
+            android:text="@string/output_money"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:layout_height="wrap_content"
+            android:text="@string/money"/>
+
+        <EditText android:id="@+id/edit_money"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_money"/>
+    </TableRow>
+</TableLayout>
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboard_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="visible"
+        />
+</LinearLayout>

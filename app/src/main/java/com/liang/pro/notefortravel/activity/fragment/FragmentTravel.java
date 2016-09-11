@@ -1,4 +1,4 @@
-package com.liang.pro.notefortravel.fragment;
+package com.liang.pro.notefortravel.activity.fragment;
 
 
 import android.content.Intent;
@@ -21,17 +21,10 @@ import org.xutils.x;
 
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class FragmentTravel extends Fragment  {
 
     @ViewInject(R.id.travel_listview)
     private ListView lv_list;
-
-   /* @ViewInject(R.id.fresh)
-    private PullToRefreshView fresh;*/
 
     private TravelAdapter travelAdapter;
     private TravelDB travelDB;

@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.liang.pro.notefortravel.fragment.FragmentAccount;
-import com.liang.pro.notefortravel.fragment.FragmentTool;
-import com.liang.pro.notefortravel.fragment.FragmentTravel;
+import com.liang.pro.notefortravel.activity.fragment.FragmentAccount;
+import com.liang.pro.notefortravel.activity.fragment.FragmentTool;
+import com.liang.pro.notefortravel.activity.fragment.FragmentTravel;
 
 public class MainAdapter extends FragmentPagerAdapter {
 
