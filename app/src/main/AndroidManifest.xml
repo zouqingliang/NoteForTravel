@@ -41,6 +41,7 @@
 
         <activity android:name=".activity.AddAccountActivity"
             android:label="@string/activity_account"/>
+        <activity android:name=".activity.WeatherActivity" />
 
         <activity
             android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"

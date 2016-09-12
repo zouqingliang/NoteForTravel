@@ -1,31 +1,29 @@
 package com.liang.pro.notefortravel.activity.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.liang.pro.notefortravel.R;
-import com.liang.pro.notefortravel.customView.PullToRefreshView;
+import com.liang.pro.notefortravel.activity.WeatherActivity;
+
+import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class FragmentTool extends Fragment implements PullToRefreshView.OnFooterRefreshListener, PullToRefreshView.OnHeaderRefreshListener {
+public class FragmentTool extends Fragment {
 
-
-    //当前的页数
-    private int page = 1;
-
-    //是否有缓存
-    private boolean hasCache;
+    @ViewInject(R.id.btn_weather)
+    private Button btn_weather;
 
     public FragmentTool() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,16 +33,13 @@ public class FragmentTool extends Fragment implements PullToRefreshView.OnFooter
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        x.view().inject(this, view);
     }
 
-
-    @Override
-    public void onFooterRefresh(PullToRefreshView view) {
-
+    @Event(R.id.btn_weather)
+    private void doClick(View view) {
+        Intent i = new Intent(getActivity(), WeatherActivity.class);
+        startActivity(i);
     }
 
-    @Override
-    public void onHeaderRefresh(PullToRefreshView view) {
-
-    }
 }

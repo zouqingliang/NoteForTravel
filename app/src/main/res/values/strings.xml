@@ -7,6 +7,7 @@
     <string name="action_save">保存</string>
     <string name="action_delete">删除</string>
     <string name="activity_read">游记详情</string>
+    <string name="btn_weather_tool">查询天气</string>
 
     <string name="add_account">记一笔</string>
     <string name="category">类别：</string>
